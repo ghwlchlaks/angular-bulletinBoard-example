@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentsTabsComponent implements OnInit {
 
-  items: string[] = ['All', 'Java', 'JavaScript'];
+  items: string[] = ['All', 'Java', 'JavaScript', 'Ruby', 'C', 'C++', 'C#', 'ETC',];
 
   constructor() { }
 

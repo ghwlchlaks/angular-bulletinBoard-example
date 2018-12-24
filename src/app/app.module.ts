@@ -6,6 +6,7 @@ import {MatButtonModule, MatSidenavModule, MatToolbarModule, MatTabsModule } fro
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ContentsModule } from "./contents/contents.module";
+
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
