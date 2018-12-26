@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MatDialog, MatTableDataSource, MatPaginator } from '@angular/material';
 
-import { ContentsViewDialogComponent } from "../contents-view-dialog/contents-view-dialog.component";
+import { ContentsViewDialogComponent } from '../contents-view-dialog/contents-view-dialog.component';
 
 interface PeriodicElement {
   name: string;
@@ -29,7 +29,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./contents-list.component.css']
 })
 export class ContentsListComponent implements OnInit {
-  
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource;
   perioid: PeriodicElement[];
@@ -38,21 +37,20 @@ export class ContentsListComponent implements OnInit {
 
   _tabName: string;
   @Input()
-  set tabName(value: string){
+  set tabName(value: string) {
     this._tabName = value;
   }
-  constructor(public dialog: MatDialog ) { 
+  constructor(public dialog: MatDialog ) {
     this.perioid = ELEMENT_DATA;
     this.dataSource = new MatTableDataSource<PeriodicElement>(this.perioid);
-    //this.dataSource.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginator;
     setTimeout(() => this.dataSource.paginator = this.paginator);
   }
-
   ngOnInit() {
   }
-  
   rowSelect(row) {
     const dialogRef = this.dialog.open(ContentsViewDialogComponent);
+    console.log(row);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result : ${result}`);
     });

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contents-main',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentsMainComponent implements OnInit {
 
-  constructor() { }
+  add_back = 'Add';
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  add_back_toggle(): void {
+    if (this.add_back === 'Add') {
+      this.add_back = 'Back';
+    } else {
+      this.router.navigate(['/board']);
+      this.add_back = 'Add';
+    }
+  }
 }

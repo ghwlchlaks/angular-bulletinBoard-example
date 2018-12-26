@@ -4,8 +4,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatSidenavModule, MatToolbarModule, MatTabsModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing/app-routing.module';
-import { ContentsModule } from "./contents/contents.module";
+import { AppRoutingModule } from './app-routing.module';
+import { ContentsModule } from './contents/contents.module';
 
 import { HomeComponent } from './home/home.component';
 
