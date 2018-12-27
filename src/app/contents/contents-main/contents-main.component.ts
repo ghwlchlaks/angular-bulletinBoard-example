@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ContentsService } from '../contents.service';
+
 
 @Component({
   selector: 'app-contents-main',
@@ -8,19 +10,26 @@ import { Router } from '@angular/router';
 })
 export class ContentsMainComponent implements OnInit {
 
-  add_back = 'Add';
-
-  constructor(private router: Router) { }
+  add_back: String = 'Add';
+  constructor(private router: Router, public service: ContentsService) { }
 
   ngOnInit() {
   }
 
   add_back_toggle(): void {
     if (this.add_back === 'Add') {
+      // this.getData();
       this.add_back = 'Back';
+      this.router.navigate(['/add']);
     } else {
-      this.router.navigate(['/board']);
       this.add_back = 'Add';
+      this.router.navigate(['/board']);
     }
+  }
+
+  getData(): any {
+    this.service.getData().subscribe((data: {}) => {
+      console.log(data);
+    });
   }
 }

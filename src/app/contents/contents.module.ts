@@ -11,7 +11,13 @@ import { ContentsAddComponent } from './contents-add/contents-add.component';
 import { ContentsRoutingRoutes } from './contents-routing.routing';
 
 @NgModule({
-  declarations: [ContentsMainComponent, ContentsTabsComponent, ContentsListComponent, ContentsViewDialogComponent, ContentsAddComponent],
+  declarations: [
+    ContentsMainComponent,
+    ContentsTabsComponent,
+    ContentsListComponent,
+    ContentsViewDialogComponent,
+    ContentsAddComponent
+  ],
   imports: [
     CommonModule,
     MatTabsModule,

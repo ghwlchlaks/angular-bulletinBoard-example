@@ -8,8 +8,6 @@ import { ContentsAddComponent } from './contents/contents-add/contents-add.compo
 
 const routers: Routes = [
   {path: '', component: HomeComponent},
-  // {path: 'board', component : ContentsMainComponent},
-  // {path: 'addContent', component: ContentsAddComponent}
   {path: 'board', loadChildren: './contents/contents.module#ContentsModule'}
 ];
 
