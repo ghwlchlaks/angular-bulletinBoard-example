@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { ContentsService } from '../contents.service';
-
+import { slideInAnimation } from '../animation';
 
 @Component({
   selector: 'app-contents-main',
   templateUrl: './contents-main.component.html',
-  styleUrls: ['./contents-main.component.css']
+  styleUrls: ['./contents-main.component.css'],
+  animations: [
+    slideInAnimation
+  ]
 })
 export class ContentsMainComponent implements OnInit {
 
@@ -31,5 +34,11 @@ export class ContentsMainComponent implements OnInit {
     this.service.getData().subscribe((data: {}) => {
       console.log(data);
     });
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet &&
+    outlet.activatedRouteData &&
+    outlet.activatedRouteData['animation'];
   }
 }
