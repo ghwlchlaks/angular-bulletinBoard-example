@@ -1,4 +1,5 @@
-<div [@routeAnimations1]="prepareRoute(outlet)" >
+<div [@routeAnimation]="prepareRoute(outlet)" >
     <router-outlet #outlet="outlet"></router-outlet>
 </div>
+<!-- <router-outlet></router-outlet> -->
 <button mat-raised-button (click)="add_back_toggle()">{{add_back}}</button>

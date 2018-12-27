@@ -6,7 +6,8 @@ import { HomeComponent } from './home/home.component';
 
 const routers: Routes = [
   {path: '', component: HomeComponent, data: {animations: 'HomePage'}},
-  {path: 'board', loadChildren: './contents/contents.module#ContentsModule', data: {animations: 'BoardPage'}}
+  {path: 'board', loadChildren: './contents/contents.module#ContentsModule', data: {animations: 'BoardPage'}},
+  {path: 'board1', loadChildren: './contents1/contents1.module#Contents1Module'}
 ];
 
 @NgModule({

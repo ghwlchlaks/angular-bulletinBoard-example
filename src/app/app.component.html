@@ -8,15 +8,18 @@
   <!-- <mat-drawer class="example-sidenav" #drawer [mode]="Over"> -->
         <mat-drawer class="example-sidenav" #drawer>
     <div>
-        <button mat-button><a class="p-2 text-muted" routerLink="/">Home</a></button>
+        <button mat-button><a class="p-2 text-muted" routerLinkActive="active" routerLink="/">Home</a></button>
     </div>
     <div>
-        <button mat-button><a class="p-2 text-muted" routerLink="/board">board</a></button>
+        <button mat-button><a class="p-2 text-muted" routerLinkActive="active" routerLink="/board">board</a></button>
+    </div>
+    <div>
+        <button mat-button><a class="p-2 text-muted" routerLinkActive="active" routerLink="/board1">board1</a></button>
     </div>
   </mat-drawer>
   <mat-drawer-content class="example-sidenav-content">
-    <div [@routeAnimations]="prepareRoute(outlet)" >
-        <router-outlet #outlet="outlet"></router-outlet>
+    <div [@routeAnimation]="getAnimationData(routerOutlet)" >
+        <router-outlet #routerOutlet="outlet"></router-outlet>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

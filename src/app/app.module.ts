@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContentsModule } from './contents/contents.module';
 
 import { HomeComponent } from './home/home.component';
+import { Contents1Module } from './contents1/contents1.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     MatTabsModule,
     AppRoutingModule,
-    ContentsModule
+    ContentsModule,
+    Contents1Module
   ],
   providers: [],
   bootstrap: [AppComponent]
