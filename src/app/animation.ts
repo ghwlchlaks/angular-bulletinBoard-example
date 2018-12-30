@@ -4,7 +4,6 @@ import {
   } from '@angular/animations';
 // Routable animations
 
-/* 하나의 route-oultlet에 한개의 trigger */
 export const slideInAnimation2 =
 trigger('routeAnimation', [
   state('*', style({
@@ -26,15 +25,7 @@ trigger('routeAnimation', [
 
   transition('BoardPage => HomePage', [style({bottom: '100%'}), animate('.3s', style({
     bottom: 0
-  }))])
-]);
-
-export const slideInAnimation1 =
-trigger('routeAnimation1', [
-  state('*', style({
-    position: 'relative',
-    backgroundColor: 'rgba(0,0,0,8)'
-  })),
+  }))]),
 
   transition('BoardPage => AddPage', [style({bottom: '100%'}), animate('.3s', style({
     bottom: 0
@@ -42,5 +33,62 @@ trigger('routeAnimation1', [
 
   transition('AddPage => BoardPage', [style({top: '100%'}), animate('.3s', style({
     top: 0
-  }))])
+  }))]),
+
+  transition('* => BoardPage', [
+    query(':enter, :leave', style({position: 'relative', width: '100%'})),
+    group([
+      query(':enter', [
+        style({left: '100%'}),
+        animate('.3s', style({left: 0}))
+      ], {optional: true}),
+      query(':leave', [
+        style({right: '100%'}),
+        animate('.3s', style({right: 0}))
+      ], {optional: true})
+    ])
+  ]),
+  transition('* => AddPage', [
+    query(':enter, :leave', style({position: 'relative', width: '100%'})),
+    group([
+      query(':enter', [
+        style({right: '100%'}),
+        animate('.3s', style({right: 0}))
+      ], {optional: true}),
+      query(':leave', [
+        style({right: '100%'}),
+        animate('.3s', style({right: 0}))
+      ], {optional: true})
+    ])
+  ])
 ]);
+
+// export const slideInAnimation3 =
+// trigger('routeAnimation3', [
+//   transition('* => BoardPage', [
+//     query(':enter, :leave', style({position: 'relative', width: '100%'})),
+//     group([
+//       query(':enter', [
+//         style({left: '100%'}),
+//         animate('.3s', style({left: 0}))
+//       ], {optional: true}),
+//       query(':leave', [
+//         style({right: '100%'}),
+//         animate('.3s', style({right: 0}))
+//       ], {optional: true})
+//     ])
+//   ]),
+//   transition('* => AddPage', [
+//     query(':enter, :leave', style({position: 'relative', width: '100%'})),
+//     group([
+//       query(':enter', [
+//         style({right: '100%'}),
+//         animate('.3s', style({right: 0}))
+//       ], {optional: true}),
+//       query(':leave', [
+//         style({right: '100%'}),
+//         animate('.3s', style({right: 0}))
+//       ], {optional: true})
+//     ])
+//   ])
+// ]);
