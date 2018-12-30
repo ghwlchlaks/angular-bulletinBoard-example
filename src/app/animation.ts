@@ -8,7 +8,7 @@ import {
 export const slideInAnimation2 =
 trigger('routeAnimation', [
   state('*', style({
-    position: 'absolute',
+    position: 'relative',
     backgroundColor: 'rgba(0,0,0,0)'
   })),
   transition('main => serve', [style({top: '100%'}), animate('.3s', style({
@@ -29,3 +29,18 @@ trigger('routeAnimation', [
   }))])
 ]);
 
+export const slideInAnimation1 =
+trigger('routeAnimation1', [
+  state('*', style({
+    position: 'relative',
+    backgroundColor: 'rgba(0,0,0,8)'
+  })),
+
+  transition('BoardPage => AddPage', [style({bottom: '100%'}), animate('.3s', style({
+    bottom: 0
+  }))]),
+
+  transition('AddPage => BoardPage', [style({top: '100%'}), animate('.3s', style({
+    top: 0
+  }))])
+]);

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { ContentsService } from '../contents.service';
-// import { slideInAnimation1 } from '../../animation';
+import { slideInAnimation1 } from '../../animation';
 
 @Component({
   selector: 'app-contents-main',
   templateUrl: './contents-main.component.html',
   styleUrls: ['./contents-main.component.css'],
-  // animations: [
-  //   slideInAnimation1
-  // ]
+  animations: [
+    slideInAnimation1
+  ]
 })
 export class ContentsMainComponent implements OnInit {
 
