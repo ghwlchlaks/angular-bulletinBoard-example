@@ -62,33 +62,3 @@ trigger('routeAnimation', [
     ])
   ])
 ]);
-
-// export const slideInAnimation3 =
-// trigger('routeAnimation3', [
-//   transition('* => BoardPage', [
-//     query(':enter, :leave', style({position: 'relative', width: '100%'})),
-//     group([
-//       query(':enter', [
-//         style({left: '100%'}),
-//         animate('.3s', style({left: 0}))
-//       ], {optional: true}),
-//       query(':leave', [
-//         style({right: '100%'}),
-//         animate('.3s', style({right: 0}))
-//       ], {optional: true})
-//     ])
-//   ]),
-//   transition('* => AddPage', [
-//     query(':enter, :leave', style({position: 'relative', width: '100%'})),
-//     group([
-//       query(':enter', [
-//         style({right: '100%'}),
-//         animate('.3s', style({right: 0}))
-//       ], {optional: true}),
-//       query(':leave', [
-//         style({right: '100%'}),
-//         animate('.3s', style({right: 0}))
-//       ], {optional: true})
-//     ])
-//   ])
-// ]);

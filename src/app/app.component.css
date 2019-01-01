@@ -1,17 +1,32 @@
 .example-container {
     width: 100%;
-    height: 720px;
-    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
   }
   
   .example-sidenav-content {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 920px;
     align-items: center;
     justify-content: center;
   }
   
   .example-sidenav {
-    padding: 20px;
+    padding: 15px;
   }
+
+  .title {
+    flex: 1 1 auto;
+    text-align: center;
+    text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
+    -moz-text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
+    -webkit-text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
+  }
+
+.btn-danger{
+  background-color: aqua;
+}
+.btn-warning{
+  background-color: brown;
+}
