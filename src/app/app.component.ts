@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, Router, Event } from '@angular/router';
+import { RouterOutlet, Router, Event, NavigationEnd } from '@angular/router';
 import { slideInAnimation2 } from './animation';
 import { Location } from '@angular/common';
 
@@ -13,15 +13,18 @@ import { Location } from '@angular/common';
 })
 export class AppComponent {
   title = 'angular-bulletinBoard-example';
-  buttonColor: Boolean = false;
+  buttonColor: String = 'green';
 
   constructor(private router: Router, private location: Location) {
-    this.router.events.subscribe((val: Event) => {
-      if (this.location.path() === '' ||
-       this.location.path() === '/board' ||
-       this.location.path() === '/board1' ) {
-         console.log('eref');
-        this.buttonColor = true;
+    // this.router.events.subscribe((val: Event) => {
+    //   // if (this.location.path() === '') {
+    //   //   // console.log(this.location.path());
+    //   //   // this.buttonColor = 'blue';
+    //   // }
+    // });
+    this.router.events.forEach((event) => {
+      if (event instanceof NavigationEnd) {
+        console.log(event.url);
       }
     });
   }
