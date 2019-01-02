@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, Router, Event, NavigationEnd } from '@angular/router';
+import { RouterOutlet, Router, Event, NavigationStart } from '@angular/router';
 import { slideInAnimation2 } from './animation';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,20 +10,23 @@ import { Location } from '@angular/common';
     slideInAnimation2
   ]
 })
+
 export class AppComponent {
   title = 'angular-bulletinBoard-example';
-  buttonColor: String = 'green';
 
-  constructor(private router: Router, private location: Location) {
-    // this.router.events.subscribe((val: Event) => {
-    //   // if (this.location.path() === '') {
-    //   //   // console.log(this.location.path());
-    //   //   // this.buttonColor = 'blue';
-    //   // }
-    // });
-    this.router.events.forEach((event) => {
-      if (event instanceof NavigationEnd) {
-        console.log(event.url);
+  button_color_arr: Array<Boolean> = [false, false, false];
+  button_color_map: Map<String, number> = new Map([['/', 0], ['/board', 1], ['/board1', 2]]);
+  private preUrl: String = undefined;
+  private curUrl: String = undefined;
+
+  constructor(private router: Router) {
+    this.curUrl = this.router.url;
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
+        this.preUrl = this.curUrl;
+        this.curUrl = event.url;
+        this.button_color_arr[this.button_color_map.get(this.preUrl)] = false;
+        this.button_color_arr[this.button_color_map.get(this.curUrl)] = true;
       }
     });
   }

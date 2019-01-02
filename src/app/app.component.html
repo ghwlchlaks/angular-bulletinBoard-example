@@ -10,13 +10,13 @@
     <!-- <mat-drawer class="example-sidenav" #drawer [mode]="Over"> -->
             <mat-drawer class="example-sidenav" #drawer>
         <div>
-            <button [ngClass]="'buttonColor' ? 'btn-warning' : 'btn-danger'" mat-button (click)="side_click(0)">&nbsp;<i class="material-icons">home</i>&nbsp;&nbsp; <h4 class="mat-h4">Home</h4></button>
+            <button [ngClass]="button_color_arr[0] ? 'active_button' : 'default_button'" mat-button (click)="side_click(0)">&nbsp;<i class="material-icons">home</i>&nbsp;&nbsp; <h4 class="mat-h4">Home</h4></button>
         </div>
         <div>
-            <button mat-button (click)="side_click(1)">&nbsp;<i class="material-icons">list_alt</i>&nbsp;&nbsp; <h4 class="mat-h4">board</h4></button>
+            <button [ngStyle]="{'background-color': button_color_arr[1] ? 'red' : 'blue'}" mat-button (click)="side_click(1)">&nbsp;<i class="material-icons">list_alt</i>&nbsp;&nbsp; <h4 class="mat-h4">board</h4></button>
         </div>
         <div>
-            <button [ngStyle]="{'background-color': buttonColor}" mat-button (click)="side_click(2)"><i class="material-icons">list_alt</i>&nbsp;&nbsp; <h4 class="mat-h4">board1</h4></button>
+            <button [ngStyle]="{'background-color': button_color_arr[2] ? 'red' : 'blue'}" mat-button (click)="side_click(2)"><i class="material-icons">list_alt</i>&nbsp;&nbsp; <h4 class="mat-h4">board1</h4></button>
         </div>
     </mat-drawer>
     <mat-drawer-content class="example-sidenav-content">
@@ -26,3 +26,25 @@
     </mat-drawer-content>
     </mat-drawer-container>
 </div>
+
+<header class="header" role="banner">
+        <h1 class="logo">
+          <a href="#">Terence <span>Devine</span></a>
+        </h1>
+        <div class="nav-wrap">
+          <nav class="main-nav" role="navigation">
+            <ul class="unstyled list-hover-slide">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Work</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+          <ul class="social-links list-inline unstyled list-hover-slide">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Google+</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">CodePen</a></li>
+          </ul>
+        </div>
+      </header>

@@ -24,9 +24,150 @@
     -webkit-text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
   }
 
-.btn-danger{
-  background-color: aqua;
+  .default_button{
+    background: none;
+    border-color: #87db41;
+    color: #87db41;
+    padding: 5px 5px;
+    width: 30%;
+    text-align: center;
+    outline: none;
+  }
+  .active_button {
+    border-style: outset;
 }
-.btn-warning{
-  background-color: brown;
+
+*, :before, :after{ box-sizing: border-box; }
+// FONTS
+$sans: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+
+// COLORS
+$orange: #DF4500;
+$gray: #35302D;
+$gray-shine: #3C3735;
+$white-off: #DFDBD9;
+
+// REUSABLE STYLES
+.unstyled{ list-style: none; padding: 0; margin: 0;
+  a{ text-decoration: none; }
+}
+.list-inline{ overflow: hidden;
+  li{ float: left; }
+}
+
+// HEADER STYLES
+.header{
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 17.5em;
+  background: $gray;
+}
+
+.logo{
+  text-transform: lowercase;
+  font: 300 2em $sans;
+  text-align: center;
+  padding: 0; margin: 0;
+  
+  a{
+    display: block;
+    padding: 1em 0;
+    color: $white-off;
+    text-decoration: none;
+    transition: .15s linear color;
+    
+    &:hover{
+      color: #fff;
+      span{ color: $orange; }
+    }
+  }
+  
+  span{
+    font-weight: 700;
+    transition: .15s linear color;
+  }
+}
+
+// MAIN NAV
+.main-nav{
+  
+  ul{
+    border-top: solid 1px $gray-shine;
+  }
+  
+  li{
+    border-bottom: solid 1px $gray-shine;
+  }
+  
+  a{
+    padding: 1.1em 0;
+    color: $white-off;
+    font: 400 1.125em $sans;
+    text:{
+      align: center;
+      transform: lowercase;
+    }
+    
+    &:hover{
+      color: #fff;
+    }
+  }
+}
+
+// SOCIAL LINKS
+.social-links{
+  border-bottom: solid 1px $gray-shine;
+  
+  li{
+    width: 25%;
+    border-left: solid 1px $gray-shine;
+    &:first-child{ border: none; }
+  }
+  
+  a{
+    display: block;
+    height: 5.5em;
+    text-align: center;
+    color: $gray-shine;
+    font: 0.75em/5.5em $sans;
+    &:hover{
+      color: $white-off;
+    }
+  }
+}
+
+// HOVER SLIDE EFFECT
+.list-hover-slide{
+  
+  li{
+    position: relative;
+    overflow: hidden;
+  }
+  
+  a{
+    display: block;
+    position: relative;
+    z-index: 1;
+    transition: .35s ease color;
+    
+    &:before{
+      content: '';
+      display: block;
+      z-index: -1;
+      position: absolute;
+      left: -100%; top: 0;
+      width: 100%; height: 100%;
+      border-right: solid 5px $orange;
+      background: $gray-shine;
+      transition: .35s ease left;
+    }
+    
+    &.is-current,
+    &:hover{
+      
+      &:before{
+        left: 0;
+      }
+    }
+  }
 }
