@@ -10,29 +10,32 @@ trigger('routeAnimation', [
     position: 'relative',
     backgroundColor: 'rgba(0,0,0,0)'
   })),
-  transition('main => serve', [style({top: '100%'}), animate('.3s', style({
+
+  /* homecomponent -> content main component */
+  transition('HomePage => *', [style({top: '100%'}), animate('.3s', style({
     top: 0
   }))]),
 
-  transition('serve => main', [style({bottom: '100%'}), animate('.3s', style({
+  transition('* => HomePage', [style({bottom: '100%'}), animate('.3s', style({
     bottom: 0
   }))]),
 
-
-  transition('HomePage => BoardPage', [style({top: '100%'}), animate('.3s', style({
+  /* boardPage <-> board1Page */
+  transition('BoardPage => Board1Page', [style({top: '100%'}), animate('.3s', style({
     top: 0
   }))]),
 
-  transition('BoardPage => HomePage', [style({bottom: '100%'}), animate('.3s', style({
+  transition('Board1Page => BoardPage', [style({bottom: '100%'}), animate('.3s', style({
     bottom: 0
   }))]),
 
-  transition('BoardPage => AddPage', [style({bottom: '100%'}), animate('.3s', style({
-    bottom: 0
+  /* board1page <-> serve1page */
+  transition('Board1Page => Serve1Page', [style({left: '100%'}), animate('.3s', style({
+    left: 0
   }))]),
 
-  transition('AddPage => BoardPage', [style({top: '100%'}), animate('.3s', style({
-    top: 0
+  transition('Serve1Page => Board1Page', [style({right: '100%'}), animate('.3s', style({
+    right: 0
   }))]),
 
   transition('* => BoardPage', [
