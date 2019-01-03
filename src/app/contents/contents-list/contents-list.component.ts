@@ -50,9 +50,8 @@ export class ContentsListComponent implements OnInit {
   }
   rowSelect(row) {
     const dialogRef = this.dialog.open(ContentsViewDialogComponent);
-    console.log(row);
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result : ${result}`);
+      // console.log(`Dialog result : ${result}`);
     });
   }
 }
