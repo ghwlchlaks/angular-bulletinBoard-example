@@ -13,19 +13,22 @@ import { slideInAnimation2 } from '../../animation';
 })
 export class ContentsMainComponent implements OnInit {
 
-  add_back: String = 'Add';
-  constructor(private router: Router, public service: ContentsService) { }
+  add_back: String = '';
+  constructor(private router: Router, public service: ContentsService) {
+    if (this.router.url === '/add') {
+      this.add_back = 'Back';
+    } else if (this.router.url === '/board') {
+      this.add_back = 'Add';
+    } else {}
+  }
 
   ngOnInit() {
   }
 
   add_back_toggle(): void {
     if (this.add_back === 'Add') {
-      // this.getData();
-      this.add_back = 'Back';
       this.router.navigate(['/add']);
     } else {
-      this.add_back = 'Add';
       this.router.navigate(['/board']);
     }
   }
