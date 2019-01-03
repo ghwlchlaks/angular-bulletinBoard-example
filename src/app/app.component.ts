@@ -14,7 +14,7 @@ import { slideInAnimation2 } from './animation';
 export class AppComponent {
   title = 'angular-bulletinBoard-example';
 
-  button_color_arr: Array<Boolean> = [false, false, false];
+  button_color_arr: Array<Boolean> = [false, false, false, false, false, false];
   button_color_map: Map<String, number> = new Map([['/', 0], ['/board', 1], ['/board1', 2]]);
   private preUrl: String = undefined;
   private curUrl: String = undefined;

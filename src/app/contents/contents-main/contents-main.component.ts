@@ -32,7 +32,7 @@ export class ContentsMainComponent implements OnInit {
 
   getData(): any {
     this.service.getData().subscribe((data: {}) => {
-      console.log(data);
+      // console.log(data);
     });
   }
 

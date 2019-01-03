@@ -1,173 +1,78 @@
-.example-container {
-    width: 100%;
-    height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-  }
-  
-  .example-sidenav-content {
-    display: flex;
-    width: 100%;
-    height: 920px;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .example-sidenav {
-    padding: 15px;
-  }
-
-  .title {
-    flex: 1 1 auto;
-    text-align: center;
-    text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
-    -moz-text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
-    -webkit-text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
-  }
-
-  .default_button{
-    background: none;
-    border-color: #87db41;
-    color: #87db41;
-    padding: 5px 5px;
-    width: 30%;
-    text-align: center;
-    outline: none;
-  }
-  .active_button {
-    border-style: outset;
-}
-
-*, :before, :after{ box-sizing: border-box; }
-// FONTS
-$sans: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-
-// COLORS
-$orange: #DF4500;
-$gray: #35302D;
-$gray-shine: #3C3735;
-$white-off: #DFDBD9;
-
-// REUSABLE STYLES
-.unstyled{ list-style: none; padding: 0; margin: 0;
-  a{ text-decoration: none; }
-}
-.list-inline{ overflow: hidden;
-  li{ float: left; }
-}
-
-// HEADER STYLES
-.header{
-  position: fixed;
-  left: 0; top: 0; bottom: 0;
-  width: 17.5em;
-  background: $gray;
-}
-
-.logo{
-  text-transform: lowercase;
-  font: 300 2em $sans;
+/* toolbar main title css */
+.title {
+  flex: 1 1 auto;
   text-align: center;
-  padding: 0; margin: 0;
-  
-  a{
-    display: block;
-    padding: 1em 0;
-    color: $white-off;
-    text-decoration: none;
-    transition: .15s linear color;
-    
-    &:hover{
-      color: #fff;
-      span{ color: $orange; }
-    }
-  }
-  
-  span{
-    font-weight: 700;
-    transition: .15s linear color;
-  }
+  text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
+  -moz-text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
+  -webkit-text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
 }
 
-// MAIN NAV
-.main-nav{
-  
-  ul{
-    border-top: solid 1px $gray-shine;
-  }
-  
-  li{
-    border-bottom: solid 1px $gray-shine;
-  }
-  
-  a{
-    padding: 1.1em 0;
-    color: $white-off;
-    font: 400 1.125em $sans;
-    text:{
-      align: center;
-      transform: lowercase;
-    }
-    
-    &:hover{
-      color: #fff;
-    }
-  }
+
+/* side bar css */
+.example-sidenav {}
+.example-container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.example-sidenav > div {
+  margin: 10px;
+}
+.example-sidenav-content {
+  display: flex;
+  width: 100%;
+  height: 920px;
+  align-items: center;
+  justify-content: center;
 }
 
-// SOCIAL LINKS
-.social-links{
-  border-bottom: solid 1px $gray-shine;
-  
-  li{
-    width: 25%;
-    border-left: solid 1px $gray-shine;
-    &:first-child{ border: none; }
-  }
-  
-  a{
-    display: block;
-    height: 5.5em;
-    text-align: center;
-    color: $gray-shine;
-    font: 0.75em/5.5em $sans;
-    &:hover{
-      color: $white-off;
-    }
-  }
+/* sidebar button css */
+.active_button {
+  background:#fff;
+  color:#353535;
+  height:60px;
+  font-size:0.8em;
+  padding:0 2em;
+  border:none;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  width:100%;
 }
 
-// HOVER SLIDE EFFECT
-.list-hover-slide{
-  
-  li{
-    position: relative;
-    overflow: hidden;
-  }
-  
-  a{
-    display: block;
-    position: relative;
-    z-index: 1;
-    transition: .35s ease color;
-    
-    &:before{
-      content: '';
-      display: block;
-      z-index: -1;
-      position: absolute;
-      left: -100%; top: 0;
-      width: 100%; height: 100%;
-      border-right: solid 5px $orange;
-      background: $gray-shine;
-      transition: .35s ease left;
-    }
-    
-    &.is-current,
-    &:hover{
-      
-      &:before{
-        left: 0;
-      }
-    }
-  }
+.default_button{
+  background:#353535;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:0.8em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+.default_button:hover{
+  background:#fff;
+  color:#353535;
+}
+.default_button:before,.default_button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #353535;
+  transition:400ms ease all;
+}
+.default_button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.default_button:hover:before,.default_button:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
